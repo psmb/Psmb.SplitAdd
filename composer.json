@@ -1,0 +1,18 @@
+{
+    "description": "Allows to insert images and other nodes between text paragraphs in one click",
+    "type": "neos-package",
+    "name": "psmb/splitadd",
+    "require": {
+        "neos/neos": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Psmb\\SplitAdd\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Psmb.SplitAdd"
+        }
+    }
+}

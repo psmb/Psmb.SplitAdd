@@ -1,0 +1,7 @@
+Neos:
+  Neos:
+    Ui:
+      resources:
+        javascript:
+          'Psmb.SplitAdd:CreateNodeView':
+            resource: resource://Psmb.SplitAdd/Public/JavaScript/SplitAdd/Plugin.js

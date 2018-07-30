@@ -1,0 +1,5 @@
+'Neos.Neos:Node':
+  options:
+    nodeCreationHandlers:
+      properties:
+        nodeCreationHandler: 'Psmb\SplitAdd\PropertiesNodeCreationHandler'
