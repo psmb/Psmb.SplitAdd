@@ -1,5 +1,5 @@
 import manifest from '@neos-project/neos-ui-extensibility';
-import {$add} from 'plow-js';
+import {$add, $get} from 'plow-js';
 import SplitPlugin from './splitPlugin';
 import SplitAddButton from './SplitAddButton';
 
@@ -20,7 +20,7 @@ manifest('Psmb.SplitAdd:SplitAdd', {}, globalRegistry => {
         component: SplitAddButton,
         icon: 'plus-square',
         tooltip: 'Create new node after paragraph',
-        isVisible: () => true
+        isVisible: $get('formatting.splitAdd'),
     }, 'before strong');
 
     const config = globalRegistry.get('ckEditor5').get('config');
