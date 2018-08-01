@@ -19,5 +19,5 @@ Works only on nodes inside ContentCollections (obviously).
         inline:
           editorOptions:
             formatting:
-              splitNode: true
+              splitAdd: true
 ```
