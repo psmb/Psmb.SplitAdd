@@ -7,11 +7,10 @@ Works only on nodes inside ContentCollections (obviously).
 
 ## Installation
 
-1. Switch to using CKeditor 5
-2. `composer require '@psmb/splitadd:@dev'`
-3. Enable splitNode button on node properties that should support it, e.g.:
+1. `composer require 'psmb/splitadd'`
+2. Enable splitNode button on node properties that should support it, e.g.:
 
-```
+```yaml
 'Neos.NodeTypes:TextMixin':
   properties:
     text:
@@ -20,4 +19,14 @@ Works only on nodes inside ContentCollections (obviously).
           editorOptions:
             formatting:
               splitAdd: true
+```
+
+Note: when using `neos/neos-ui` older than 2.0, you need to switch to using CKeditor 5:
+
+```yaml
+Neos:
+  Neos:
+    Ui:
+      frontendConfiguration:
+        defaultInlineEditor: 'ckeditor5'
 ```
