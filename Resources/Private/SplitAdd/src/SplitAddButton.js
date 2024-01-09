@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import {$get, $transform} from 'plow-js';
 import {IconButton} from '@neos-project/react-ui-components';
 import {neos} from '@neos-project/neos-ui-decorators';
 
@@ -9,12 +8,12 @@ import {connect} from 'react-redux';
 import {actions} from '@neos-project/neos-ui-redux-store';
 import {calculateDomAddresses} from './dom';
 
-@connect($transform({
-    fusionPath: $get('cr.nodes.focused.fusionPath')
+@connect(state => ({
+    fusionPath: state.cr.nodes.focused.fusionPath,
 }), {
-        persistChanges: actions.Changes.persistChanges,
-        commenceNodeCreation: actions.CR.Nodes.commenceCreation
-    })
+    persistChanges: actions.Changes.persistChanges,
+    commenceNodeCreation: actions.CR.Nodes.commenceCreation
+})
 @neos(globalRegistry => ({
     i18nRegistry: globalRegistry.get('i18n')
 }))

@@ -3,16 +3,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "neos-react-scripts build",
-    "watch": "neos-react-scripts watch"
+    "build": "node build.js",
+    "watch": "node build.js --watch"
   },
   "devDependencies": {
-    "@neos-project/neos-ui-extensibility": "@dev"
-  },
-  "neos": {
-    "buildTargetDirectory": "../../Public/JavaScript/SplitAdd"
-  },
-  "dependencies": {
-    "@ckeditor/ckeditor5-core": "^11.0.0"
+      "@neos-project/neos-ui-extensibility": "~8.3.0",
+      "esbuild": "~0.19.11"
   }
 }
