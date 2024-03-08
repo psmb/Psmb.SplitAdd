@@ -1,5 +1,4 @@
-import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
-import Command from '@ckeditor/ckeditor5-core/src/command';
+import {Plugin, Command} from 'ckeditor5-exports';
 
 class SplitCommand extends Command {
     execute(callback) {

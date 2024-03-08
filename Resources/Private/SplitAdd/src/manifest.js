@@ -1,13 +1,17 @@
 import manifest from '@neos-project/neos-ui-extensibility';
-import {$add, $get} from 'plow-js';
 import SplitPlugin from './splitPlugin';
 import SplitAddButton from './SplitAddButton';
 
 const addPlugin = (Plugin, isEnabled) => (ckEditorConfiguration, options) => {
-    // we duplicate editorOptions here so it would be possible to write smth like `$get('formatting.sup')`
     if (!isEnabled || isEnabled(options.editorOptions, options)) {
         ckEditorConfiguration.plugins = ckEditorConfiguration.plugins || [];
-        return $add('plugins', Plugin, ckEditorConfiguration);
+        return {
+            ...ckEditorConfiguration,
+            plugins: [
+                ...(ckEditorConfiguration.plugins ?? []),
+                Plugin,
+            ]
+        };
     }
     return ckEditorConfiguration;
 };
@@ -20,7 +24,7 @@ manifest('Psmb.SplitAdd:SplitAdd', {}, globalRegistry => {
         component: SplitAddButton,
         icon: 'plus-square',
         tooltip: 'Create new node after paragraph',
-        isVisible: $get('formatting.splitAdd'),
+        isVisible: editorOptions => editorOptions?.formatting?.splitAdd,
     }, 'before strong');
 
     const config = globalRegistry.get('ckEditor5').get('config');
