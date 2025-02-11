@@ -8,6 +8,6 @@
   },
   "devDependencies": {
       "@neos-project/neos-ui-extensibility": "~8.3.0",
-      "esbuild": "~0.19.11"
+      "esbuild": "~0.25.0"
   }
 }
